@@ -1,0 +1,557 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,body{
+    height:100%;
+}
+
+body{
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    color:#222;
+    background:#fafafa;
+    line-height:1.45;
+}
+
+.container{
+    max-width:980px;
+    margin:0 auto;
+    padding:20px;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* Header */
+#site-header{
+    background:#fff;
+    border-bottom:1px solid #e6e6e6;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 0;
+}
+
+#logo{
+    font-weight:700;
+    color:#0a4b6b;
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.logo-mark{
+    background:#0a4b6b;
+    color:#fff;
+    padding:6px 8px;
+    border-radius:6px;
+    font-weight:700;
+}
+
+/* ensure logo link has no underline */
+#logo {
+    text-decoration: none;
+    color: inherit;
+}
+
+#main-nav{
+    display:flex;
+    gap:18px;
+}
+
+.nav-link{
+    text-decoration:none;
+    color:#333;
+    padding:8px 6px;
+    font-weight:600;
+}
+
+.nav-link.active{
+    border-bottom:3px solid #0a4b6b;
+    padding-bottom:5px;
+}
+
+.header-actions{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+/* Buttons common */
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:8px 14px;
+    border-radius:8px;
+    border:0;
+    cursor:pointer;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* Dark mode toggle button */
+.btn.dark{
+    background:transparent;
+    border:1px solid #ddd;
+    color:#333;
+}
+
+/* Simple log button */
+.btn.log{
+    background:transparent;
+    border:1px solid #cfdbe6;
+    padding:8px 12px;
+    color:#1b2b33;
+}
+
+/* Sign up / primary buttons */
+.btn.sign{
+    background: linear-gradient(#3b78a5,#2b5f85);
+    color:#fff;
+}
+
+/* edit button style */
+.btn.editcg{
+    padding:6px 10px;
+    font-size:14px;
+    border-radius:6px;
+    background:transparent;
+    border:1px solid #cfdbe6;
+    padding:8px 12px;
+    color:#1b2b33;
+}
+
+/* Login / signup form submit buttons */
+.btn.loglogin{
+    padding:12px 18px;
+    font-size:16px;
+    background: linear-gradient(#3b78a5,#2b5f85);
+    color:#fff;
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn.signsignup {
+    padding: 12px 18px;
+    font-size: 16px;
+    background: linear-gradient(#3b78a5, #2b5f85);
+    color: #fff;
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn.calgpa{
+    padding:12px 18px;
+    font-size:16px;
+    background: linear-gradient(#3b78a5,#2b5f85);
+    color:#fff;
+}
+
+.btn.saveres{
+    padding:12px 18px;
+    font-size:16px;
+    background:transparent;
+    border:1px solid #cfdbe6;
+    padding:8px 12px;
+    color:#1b2b33;
+}
+
+/* Hero / CTA */
+#con{
+    background:linear-gradient(180deg,#274b63 0,#1f4054 100%);
+    color:#fff;
+    padding:56px 0;
+    text-align:center;
+    margin-bottom:26px;
+}
+
+.con-inner{
+    max-width:840px;
+    margin:0 auto;
+}
+
+.con-inner h1{
+    font-size:36px;
+    margin-bottom:8px;
+    text-shadow:0 2px 0 rgba(0,0,0,0.15);
+}
+
+.subt{
+    opacity:0.95;
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+.btn.con-cta{
+    background:#fff;
+    color:#223;
+    border-radius:8px;
+    padding:10px 18px;
+}
+
+/* Section title */
+.section-title{
+    text-align:center;
+    margin-top:8px;
+    margin-bottom:12px;
+    font-size:24px;
+}
+
+/* Calculator */
+.calc-card{
+    background:#fff;
+    border:1px solid #d6e2ea;
+    border-radius:10px;
+    padding:22px;
+    margin:18px 0;
+    box-shadow:0 6px 18px rgba(31,64,84,0.04);
+}
+
+.course-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:14px;
+}
+
+.course-label{
+    font-weight:700;
+    color:#1b2b33;
+}
+
+.input{
+    display:block;
+    width:100%;
+    padding:10px 12px;
+    border:1px solid #d1d1d1;
+    border-radius:8px;
+    background:#fff;
+}
+
+.input:focus{
+    outline:3px solid rgba(58,120,165,0.12);
+}
+
+.input.small{
+    width:80px;
+}
+
+/* marks grid */
+.marks-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:12px;
+}
+
+.mark-item label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.course-actions{
+    margin-bottom:14px;
+}
+
+.semester-actions{
+    margin-bottom:14px;
+}
+
+.form-actions{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+/* About layout */
+.about-page .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:18px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #d6e2ea;
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 6px 12px rgba(15,40,60,0.03);
+    margin: 10px;
+}
+
+.features ul{
+    list-style:disc;
+    padding-left:18px;
+    margin-top:8px;
+}
+
+/* Auth pages */
+.auth-page{
+    display:flex;
+    justify-content:center;
+    padding:40px 0;
+}
+
+.auth-card{
+    width:380px;
+    background:#fff;
+    border:1px solid #d6e2ea;
+    border-radius:10px;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 10px 24px rgba(31,64,84,0.06);
+}
+
+.auth-card h2{
+    text-align:center;
+    margin-bottom:12px;
+}
+
+.auth-card label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.muted{
+    color:#666;
+    text-align:center;
+    margin-top:10px;
+}
+
+/* Profile */
+.profile-page .two-col{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:18px;
+    margin-top:18px;
+}
+
+.profile-summary .profilepic{
+    width:160px;
+    height:160px;
+    background:linear-gradient(#e6eef5,#cfe0ea);
+    border-radius:8px;
+    margin:14px auto;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.sgpa-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:6px;
+}
+
+.sgpa-table th, .sgpa-table td{
+    padding:10px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+}
+
+.sgpa-table input{
+    padding:8px;
+    border-radius:6px;
+    border:1px solid #d1d1d1;
+}
+
+.cgpa-box{
+    background:#eaf3f8;
+    padding:18px;
+    border-radius:8px;
+    text-align:center;
+    margin-top:14px;
+}
+
+.cgpa-box h2{
+    font-size:26px;
+    margin-top:6px;
+}
+
+/* Footer */
+#site-footer{
+    text-align:center;
+    padding:18px;
+    background:#1b2b33;
+    color:#fff;
+    margin-top:30px;
+}
+
+.center{
+    text-align:center;
+}
+
+/* Responsive adjustments */
+@media (max-width:980px){
+  .container{
+    padding:14px;
+  }
+}
+
+@media (max-width:800px){
+  .about-page .two-col, .profile-page .two-col{
+    grid-template-columns:1fr;
+  }
+  .marks-grid{
+    grid-template-columns:1fr;
+  }
+  .course-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .header-inner{
+    flex-direction:column;
+    gap:8px;
+  }
+  #main-nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+}
+
+@media (max-width:420px){
+  .auth-card{
+    width:92%;
+  }
+  .logo-mark{
+    padding:4px 6px;
+  }
+}
+
+/* Dark mode css */
+body.dark {
+    background-color: #131219;
+    color: #e0e0e0;
+}
+
+body.dark #site-header,
+body.dark .calc-card,
+body.dark .card,
+body.dark .auth-card,
+body.dark .input,
+body.dark .input:focus {
+    background-color: #1c1a26;
+    border-color: #2f2d3b;
+    color: #fff;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark .course-label,
+body.dark .mark-item label,
+body.dark .auth-card label,
+body.dark .nav-link,
+body.dark a {
+    color: #e0e0e0;
+}
+
+body.dark .nav-link.active {
+    color: #6ab0de;
+    border-bottom-color: #6ab0de;
+}
+
+body.dark #logo {
+    color: #fff;
+}
+
+body.dark .btn.dark,
+body.dark .btn.log,
+body.dark .btn.saveres,
+body.dark .btn.editcg {
+    border-color: #4a4759;
+    color: #e0e0e0;
+}
+
+body.dark .btn.dark:hover,
+body.dark .btn.log:hover {
+    background-color: #2f2d3b;
+}
+
+body.dark .input {
+    border: 1px solid #444;
+}
+
+body.dark .input::placeholder {
+    color: #888;
+}
+
+body.dark .sgpa-table th,
+body.dark .sgpa-table td {
+    border-bottom: 1px solid #2f2d3b;
+    color: #ddd;
+}
+
+body.dark .features ul {
+    color: #ccc;
+}
+
+body.dark .cgpa-box {
+    background-color: #1c1a26;
+    border: 1px solid #2f2d3b;
+    color: #fff;
+}
+
+body.dark .profile-summary .profilepic {
+    background: #2f2d3b;
+    box-shadow: none;
+}
+
+body.dark #site-footer {
+    background-color: #0d0c11;
+    border-top: 1px solid #2f2d3b;
+}
+
+body.dark .muted,
+body.dark .subt-small {
+    color: #8f8d99;
+}
+
+/* Unified action row for course controls */
+.course-actions {
+  display: flex;
+  gap: 12px;            /* space between buttons */
+  align-items: center;
+  margin-top: 14px;     /* space from the marks grid */
+  flex-wrap: wrap;      /* wrap on small screens */
+}
+
+/* Small visual tweak for Remove button */
+.remove-course {
+  margin: 0;            /* remove inline margin if present */
+  display: inline-block;
+}
+
+/* On very small screens stack buttons full width so they don't collide */
+@media (max-width: 480px) {
+  .course-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .course-actions .btn {
+    width: 100%;
+  }
+}

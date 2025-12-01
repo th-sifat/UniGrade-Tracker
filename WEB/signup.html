@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UniGrade Tracker — Sign Up</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="site-header">
+    <div class="container header-inner">
+      <a href="home.html" id="logo"><span class="logo-mark">UN</span> UniGrade Tracker</a>
+
+      <nav id="main-nav">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="profile.php" class="nav-link">My Profile</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn dark">Dark Mode</button>
+        <a href="login.html" class="btn log">Log In</a>
+        <a href="signup.html" class="btn sign">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container auth-page">
+    <form class="auth-card" action="signup.php" method="post">
+      <h2>Create Your Account</h2>
+
+      <label>Full Name</label>
+      <input name="full_name" type="text" class="input" placeholder="Full Name" required />
+
+      <label>Username</label>
+      <input name="username" type="text" class="input" placeholder="Username" required />
+
+      <label>Password</label>
+      <input name="password" type="password" class="input" placeholder="Password" required />
+
+      <label>Confirm Password</label>
+      <input name="confirm_password" type="password" class="input" placeholder="Confirm Password" required />
+
+      <button type="submit" class="btn signsignup">Sign Up</button>
+
+      <p class="muted">Already have an account? <a href="login.html">Log In</a></p>
+    </form>
+  </main>
+
+  <footer id="site-footer">Copyright © UniGrade Tracker. All rights reserved.</footer>
+  <script src="web.js"></script>
+</body>
+</html>

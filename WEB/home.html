@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UniGrade Tracker — Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="site-header">
+    <div class="container header-inner">
+      <a href="home.html" id="logo"><span class="logo-mark">UN</span> UniGrade Tracker</a>
+
+      <nav id="main-nav">
+        <a href="home.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="profile.php" class="nav-link">My Profile</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn dark">Dark Mode</button>
+        <a href="login.html" class="btn log">Log In</a>
+        <a href="signup.html" class="btn sign">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="con">
+    <div class="container con-inner">
+      <h1>Track Your Academic Records</h1>
+      <p class="subt">Calculate your semester GPA and save cumulative CGPA after signing up.</p>
+      <a href="#calculator" class="btn con-cta">Start Calculating</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2 id="calculator" class="section-title">Semester SGPA Calculator</h2>
+
+    <form id="calc-form" class="calc-card" action="#" method="post">
+      <div id="courses-container">
+        <div class="course-wrapper" data-type="normal">
+          <label class="course-label">Course Name</label>
+          <input type="text" name="course_name[]" class="input" placeholder="Course Name" />
+
+          <label class="course-label credits">Credits</label>
+          <input type="number" name="credits[]" class="input small credit-input" step="0.5" min="0" />
+
+          <div class="marks-grid">
+            <div class="mark-item">
+              <label>Attendance (%)</label>
+              <input class="input att-input" type="number" min="0" max="100" step="any" name="attendance[]" placeholder="Percentage"/>
+            </div>
+            <div class="mark-item">
+              <label>Quiz (out of 15)</label>
+              <input class="input mark-input" name="mark_quiz[]" placeholder="Marks"/>
+            </div>
+            <div class="mark-item">
+              <label>Assignment (out of 5)</label>
+              <input class="input mark-input" name="mark_assign[]" placeholder="Marks"/>
+            </div>
+            <div class="mark-item">
+              <label>Presentation (out of 8)</label>
+              <input class="input mark-input" name="mark_pres[]" placeholder="Marks"/>
+            </div>
+            <div class="mark-item">
+              <label>Midterm (out of 25)</label>
+              <input class="input mark-input" name="mark_mid[]" placeholder="Marks"/>
+            </div>
+            <div class="mark-item">
+              <label>Final Exam (out of 40)</label>
+              <input class="input mark-input" name="mark_final[]" placeholder="Marks"/>
+            </div>
+          </div>
+
+          <div class="course-actions">
+            <button type="button" class="btn remove-course">Remove Course</button>
+            <button type="button" class="btn another btn-add-course">+ Add Another Course</button>
+            <button type="button" class="btn another btn-add-lab">+ Add Lab Course</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden lab template (used by JS to create lab rows) -->
+      <div id="lab-template" style="display:none;">
+        <div class="course-wrapper lab-course" data-type="lab">
+          <label class="course-label">Lab Course Name</label>
+          <input type="text" name="lab_course_name[]" class="input" placeholder="Lab Course Name" />
+
+          <label class="course-label credits">Credits</label>
+          <input type="number" name="credits[]" class="input small credit-input" step="0.5" min="0" />
+
+          <div class="marks-grid">
+            <div class="mark-item">
+              <label>Attendance (%)</label>
+              <input class="input lab-att-input" type="number" min="0" max="100" step="any" name="lab_attendance[]" placeholder="Percentage"/>
+            </div>
+            <div class="mark-item">
+              <label>Lab Final (out of 40)</label>
+              <input class="input lab-final-input" name="lab_final[]" placeholder="Marks (0-40)" type="number" step="any" min="0" max="40"/>
+            </div>
+            <div class="mark-item">
+              <label>Lab Performance (out of 25)</label>
+              <input class="input lab-perf-input" name="lab_perf[]" placeholder="Marks (0-25)" type="number" step="any" min="0" max="25"/>
+            </div>
+            <div class="mark-item">
+              <label>Lab Report (out of 25)</label>
+              <input class="input lab-report-input" name="lab_report[]" placeholder="Marks (0-25)" type="number" step="any" min="0" max="25"/>
+            </div>
+            <div class="mark-item">
+              <label style="visibility:hidden">spacer</label>
+              <input style="visibility:hidden" />
+            </div>
+            <div class="mark-item">
+              <label style="visibility:hidden">spacer</label>
+              <input style="visibility:hidden" />
+            </div>
+          </div>
+
+          <div class="course-actions">
+            <button type="button" class="btn remove-course">Remove Course</button>
+            <button type="button" class="btn another btn-add-course">+ Add Another Course</button>
+            <button type="button" class="btn another btn-add-lab">+ Add Lab Course</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-area" style="display:none; margin-bottom:12px;">
+        <div>SGPA: <span id="sgpa-value">0.00</span></div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="calculateBtn" class="btn calgpa">Calculate SGPA</button>
+        <button type="button" id="saveResultBtn" class="btn saveres">Save Result</button>
+      </div>
+    </form>
+  </main>
+
+  <footer id="site-footer">Copyright © UniGrade Tracker. All rights reserved.</footer>
+
+  <script src="web.js"></script>
+</body>
+</html>
